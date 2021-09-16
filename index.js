@@ -1,7 +1,7 @@
 const net = require('net');
 
 const server = net.createServer((socket, err) => {
-    
+    socket.write('Development server\r\n');
     socket.on('data', function(data, err){
 
         let data = Buffer.from(data, 'base64').toString('ascii');
