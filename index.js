@@ -1,6 +1,6 @@
+require('dotenv');
 const net = require('net');
-const PORT = 51021;
-console.log("corriendo en el puerto " + PORT);
+console.log("corriendo en el puerto " + process.env.PORT);
 const server = net.createServer((socket, err) => {
     socket.write('Development server\r\n');
     socket.on('data', function(data, err){
@@ -30,4 +30,4 @@ const server = net.createServer((socket, err) => {
 		console.log('Connection closed');
 	});
 });
-server.listen(PORT, '0.0.0.0');
+server.listen(process.env.PORT, '0.0.0.0');
